@@ -1,0 +1,149 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #173044;
+  background: #f4f7f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.contenedor {
+  width: min(100% - 2rem, 850px);
+  margin: 3rem auto 5rem;
+}
+
+.identificador {
+  margin: 0 0 1.25rem;
+  color: #547085;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.estado {
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 14px;
+}
+
+.cabecera,
+.grupo {
+  background: #fff;
+  border: 1px solid #e3eaed;
+  border-radius: 16px;
+  box-shadow: 0 5px 24px #1730440a;
+}
+
+.cabecera {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-top: 5px solid #167d86;
+}
+
+.sobretitulo {
+  margin: 0 0 .7rem;
+  font-size: .82rem;
+  font-weight: 700;
+  color: #167d86;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 .8rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+a {
+  color: #096c77;
+  overflow-wrap: anywhere;
+}
+
+#contenido {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.grupo {
+  padding: 1.5rem;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+}
+
+dl {
+  margin: 0;
+}
+
+.dato {
+  padding: .9rem 0;
+  border-top: 1px solid #edf0f2;
+}
+
+dt {
+  margin-bottom: .3rem;
+  color: #52677a;
+  font-size: .88rem;
+  font-weight: 650;
+}
+
+dd {
+  margin: 0;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .contenedor {
+    margin-top: 1.5rem;
+  }
+
+  .grupo {
+    padding: 1.25rem;
+  }
+}
+
+/* Estilos del pie de página */
+footer {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer .logos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+footer .logos img {
+  max-width: 100%;
+  height: auto;          /* evita el estiramiento vertical */
+  width: 120px;          /* tamaño uniforme y compacto */
+  max-height: 80px;      /* limita la altura para que no crezca demasiado */
+  object-fit: contain;   /* mantiene la proporción sin recortar */
+}
+
+@media (max-width: 600px) {
+  footer .logos {
+    flex-direction: column;
+    align-items: center;
+  }
+}
