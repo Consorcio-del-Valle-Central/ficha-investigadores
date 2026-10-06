@@ -12,37 +12,51 @@
 
 <body>
   <main class="contenedor directorio">
-    <header class="cabecera">
+    <header id="encabezado-directorio" class="cabecera">
       <p class="sobretitulo">Conocimientos 2030</p>
-      <p class="sobretitulo">Jornada de Socialización y Difusión de Líneas de Investigación,  </p>
+      <p class="sobretitulo">Jornada de Socialización y Difusión de Líneas de Investigación</p>
       <h1>Directorio de investigadores</h1>
       <p id="estado" class="directorio-estado" role="status" aria-live="polite">
-        Cargando investigadores…
-      </p>
+      Cargando investigadores…
+    </p>
     </header>
+
+    
+    <a id="volver-error" class="volver-directorio" href="./" hidden>Volver al directorio</a>
+
+    <section id="seccion-lista" class="lista-investigadores" aria-label="Lista de investigadores" hidden>
+      <ul id="investigadores" class="filas-investigadores"></ul>
+      <template id="plantilla-investigador">
+        <li class="investigador">
+          <a class="investigador-enlace">
+            <article>
+              <h2 class="investigador-nombre"></h2>
+              <p class="investigador-institucion"></p>
+              <p class="investigador-facultad"></p>
+              <p class="investigador-disciplinas"></p>
+            </article>
+          </a>
+        </li>
+      </template>
+    </section>
+
+    <article id="ficha" class="ficha-investigador" hidden>
+      <a class="volver-directorio" href="./">← Volver al directorio</a>
+      <header class="cabecera">
+        <p class="sobretitulo">Ficha de investigador</p>
+        <h1 id="nombre"></h1>
+        <a id="correo" class="correo"></a>
+      </header>
+      <div id="contenido"></div>
+    </article>
   </main>
 
-  <section class="contenedor lista-investigadores" aria-label="Lista de investigadores">
-    <ul id="investigadores" class="filas-investigadores" hidden></ul>
-    <template id="plantilla-investigador">
-      <li class="investigador">
-        <a class="investigador-enlace">
-          <article>
-            <h2 class="investigador-nombre"></h2>
-            <p class="investigador-institucion"></p>
-            <p class="investigador-facultad"></p>
-            <p class="investigador-disciplinas"></p>
-          </article>
-        </a>
-      </li>
-    </template>
-  </section>
-    <footer class="pie">
+  <footer class="pie">
     <div class="logos">
-      <img src="../img/conocimientos.jpeg" alt="Logo 1">
-      <img src="../img/MinCienciaTech.jpeg" alt="Logo 2">
-      <img src="../img/UTALCA.jpeg" alt="Logo 3">
-      <img src="../img/UOH-square.jpg" alt="Logo 3">
+      <img src="./img/conocimientos.jpeg" alt="Conocimientos 2030">
+      <img src="./img/MinCienciaTech.jpeg" alt="Ministerio de Ciencia, Tecnología, Conocimiento e Innovación">
+      <img src="./img/UTALCA.jpeg" alt="Universidad de Talca">
+      <img src="./img/UOH-square.jpg" alt="Universidad de O'Higgins">
     </div>
   </footer>
 </body>
