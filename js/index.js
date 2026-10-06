@@ -96,6 +96,14 @@ function indiceColumnas(headers) {
   return columnas;
 }
 
+function capitalizarNombre(nombre) {
+  return nombre
+    .toLocaleLowerCase('es')
+    .replace(/(^|[\s-])(\p{L})/gu, (_, separador, letra) =>
+      `${separador}${letra.toLocaleUpperCase('es')}`,
+    );
+}
+
 function normalizarInvestigadores(filas, columnas) {
   const ids = new Set();
 
@@ -103,7 +111,9 @@ function normalizarInvestigadores(filas, columnas) {
     const investigador = Object.fromEntries(
       Object.entries(CAMPOS).map(([numero, clave]) => [
         clave,
-        (fila[columnas.get(Number(numero))] ?? '').trim(),
+        clave === 'nombreCompleto'
+          ? capitalizarNombre((fila[columnas.get(Number(numero))] ?? '').trim())
+          : (fila[columnas.get(Number(numero))] ?? '').trim(),
       ]),
     );
     investigador.id = (fila.ID ?? '').trim();
