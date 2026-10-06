@@ -139,11 +139,12 @@ async function iniciar() {
   }
 
   try {
-    const response = await fetch('./assets/researchers-list.csv');
+    const csvUrl = new URL('../assets/researchers-list.csv', import.meta.url);
+    const response = await fetch(csvUrl);
 
     if (!response.ok) {
       throw new Error(
-        `No se pudo cargar el CSV (HTTP ${response.status})`
+        `No se pudo cargar el CSV (HTTP ${response.status}): ${csvUrl.href}`
       );
     }
 
@@ -177,7 +178,5 @@ async function iniciar() {
     mostrarEstado(`No se pudo mostrar la ficha: ${error.message}`);
   }
 }
-
-iniciar();
 
 iniciar();

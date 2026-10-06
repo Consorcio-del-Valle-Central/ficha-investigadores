@@ -4,31 +4,45 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ficha académica de investigadores">
-  <title>Ficha de investigador - Jornada de Socialización y Difusión de Líneas de Investigación, Conocimientos 2030</title>
+  <meta name="description" content="Directorio de investigadores">
+  <title>Directorio de investigadores</title>
   <link rel="stylesheet" href="./css/styles.css">
-  <script type="module" src="./js/app.js"></script>
+  <script type="module" src="./js/index.js"></script>
 </head>
 
 <body>
-  <main class="contenedor">
-    <h2 class="estado">Jornada de Socialización y Difusión de Líneas de Investigación, Conocimientos 2030</h2>
-    <p id="estado" class="estado" role="status">Cargando ficha…</p>
-    <article id="ficha" hidden>
-      <header class="cabecera">
-        <p class="sobretitulo">Directorio de investigadores</p>
-        <h2 id="nombre"></h2>
-        <a id="correo" class="correo"></a>
-      </header>
-      <div id="contenido"></div>
-    </article>
+  <main class="contenedor directorio">
+    <header class="cabecera">
+      <p class="sobretitulo">Conocimientos 2030</p>
+      <p class="sobretitulo">Jornada de Socialización y Difusión de Líneas de Investigación,  </p>
+      <h1>Directorio de investigadores</h1>
+      <p id="estado" class="directorio-estado" role="status" aria-live="polite">
+        Cargando investigadores…
+      </p>
+    </header>
   </main>
-  <footer class="pie">
+
+  <section class="contenedor lista-investigadores" aria-label="Lista de investigadores">
+    <ul id="investigadores" class="filas-investigadores" hidden></ul>
+    <template id="plantilla-investigador">
+      <li class="investigador">
+        <a class="investigador-enlace">
+          <article>
+            <h2 class="investigador-nombre"></h2>
+            <p class="investigador-institucion"></p>
+            <p class="investigador-facultad"></p>
+            <p class="investigador-disciplinas"></p>
+          </article>
+        </a>
+      </li>
+    </template>
+  </section>
+    <footer class="pie">
     <div class="logos">
-      <img src="img/conocimientos.jpeg" alt="Logo 1">
-      <img src="img/MinCienciaTech.jpeg" alt="Logo 2">
-      <img src="img/UTALCA.jpeg" alt="Logo 3">
-      <img src="img/UOH-square.jpg" alt="Logo 3">
+      <img src="../img/conocimientos.jpeg" alt="Logo 1">
+      <img src="../img/MinCienciaTech.jpeg" alt="Logo 2">
+      <img src="../img/UTALCA.jpeg" alt="Logo 3">
+      <img src="../img/UOH-square.jpg" alt="Logo 3">
     </div>
   </footer>
 </body>
